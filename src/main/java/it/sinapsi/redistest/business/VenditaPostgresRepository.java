@@ -9,5 +9,6 @@ import java.util.List;
 
 @Repository
 public interface VenditaPostgresRepository extends JpaRepository<VenditaPostgres, String> {
-   List<VenditaPostgres> findByVenditaData(LocalDate dataVendita);
+   List<VenditaPostgres> findVenditaPostgresByVenditaData(LocalDate dataVendita);
+   List<VenditaPostgres> findVenditaPostgresByRagioneSociale(String ragioneSociale);
 }

@@ -4,6 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 
@@ -16,7 +17,7 @@ public class Vendita implements Serializable {
 
     private String indirizzo;
 
-    private LocalDate venditaData = LocalDate.now();
+    private LocalDate  venditaData = LocalDate.now();
 
     private LocalDate venditaScadenza = LocalDate.now().plusMonths(3);
 

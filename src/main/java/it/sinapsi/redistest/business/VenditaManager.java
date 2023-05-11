@@ -35,10 +35,18 @@ public class VenditaManager {
     public Iterable<Vendita> findAllVendita(){
             return venditaRepository.findAll();
     }
+    @GetMapping("/postgres")
+    public Iterable<VenditaPostgres> findAllVenditaPostgres(){
+    return venditaPostgresRepository.findAll();
+  }
 
     //qui lavora su postgres
     @GetMapping("/{data}")
-    public List<VenditaPostgres> findUnaVendita(@PathVariable("data") LocalDate data){
-            return venditaPostgresRepository.findByVenditaData(data);
+    public List<VenditaPostgres> findUByData(@PathVariable("data") LocalDate venditaData){
+            return venditaPostgresRepository.findVenditaPostgresByVenditaData(venditaData);
     }
+  @GetMapping("/R/{ragioneSociale}")
+  public List<VenditaPostgres> findByRagioneSociale(@PathVariable( "ragioneSociale") String ragioneSociale){
+    return venditaPostgresRepository.findVenditaPostgresByRagioneSociale(ragioneSociale);
+  }
 }

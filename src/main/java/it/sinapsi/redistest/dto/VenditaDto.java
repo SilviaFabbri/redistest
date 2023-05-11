@@ -2,6 +2,7 @@ package it.sinapsi.redistest.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class VenditaDto implements Serializable {
     private String ragioneSociale;
