@@ -1,11 +1,7 @@
 package it.sinapsi.redistest.dto;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
-
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.UUID;
 
 public class VenditaDto implements Serializable {
     private String ragioneSociale;
