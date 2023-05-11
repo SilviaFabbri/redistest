@@ -1,25 +1,26 @@
 package it.sinapsi.redistest.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.redis.core.RedisHash;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
 
-
-@RedisHash("vendita")
-public class Vendita implements Serializable {
-    @Id
+@Entity(name = "vendita")
+public class VenditaPostgres implements Serializable {
+    @jakarta.persistence.Id
     private UUID Id;
-
+    @Column(nullable = false)
     private String ragioneSociale;
-
-    //private Long pIva;
-
+  ////private Long pIva;
+    @Column(nullable = false)
     private String indirizzo;
-
+    @Column(nullable = false)
     private LocalDate venditaData = LocalDate.now();
-
+    @Column(nullable = false)
     private LocalDate venditaScadenza = LocalDate.now().plusMonths(3);
 
     public UUID getId() {

@@ -8,3 +8,13 @@ services:
     network_mode: bridge
     ports:
       - 6379:6379/tcp
+
+  container-postgres:
+      image: postgres:13
+      restart: always
+      environment:
+       POSTGRES_PASSWORD: admin
+       POSTGRES_DB: postgres
+      ports:
+       - 5433:5432
+

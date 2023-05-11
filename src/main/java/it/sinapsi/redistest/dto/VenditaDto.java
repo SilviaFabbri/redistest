@@ -1,34 +1,22 @@
-package it.sinapsi.redistest.model;
+package it.sinapsi.redistest.dto;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
 
-
-@RedisHash("vendita")
-public class Vendita implements Serializable {
-    @Id
-    private UUID Id;
-
+public class VenditaDto implements Serializable {
     private String ragioneSociale;
 
-    //private Long pIva;
+   // private Long pIva;
 
     private String indirizzo;
 
     private LocalDate venditaData = LocalDate.now();
 
     private LocalDate venditaScadenza = LocalDate.now().plusMonths(3);
-
-    public UUID getId() {
-        return Id;
-    }
-
-    public void setId(UUID venditaId) {
-        this.Id = venditaId;
-    }
 
     public String getRagioneSociale() {
         return ragioneSociale;
@@ -38,8 +26,8 @@ public class Vendita implements Serializable {
         this.ragioneSociale = ragioneSociale;
     }
 
-    //public Long getpIva() {
-      //  return pIva;
+   // public Long getpIva() {
+     //   return pIva;
     //}
 
     //public void setpIva(Long pIva) {
@@ -69,6 +57,5 @@ public class Vendita implements Serializable {
     public void setVenditaScadenza(LocalDate venditaScadenza) {
         this.venditaScadenza = venditaScadenza;
     }
-
 }
 
