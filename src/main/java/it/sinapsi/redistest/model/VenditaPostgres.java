@@ -2,8 +2,6 @@ package it.sinapsi.redistest.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -15,7 +13,6 @@ public class VenditaPostgres implements Serializable {
     private UUID Id;
     @Column(nullable = false)
     private String ragioneSociale;
-  ////private Long pIva;
     @Column(nullable = false)
     private String indirizzo;
     @Column(nullable = false)
@@ -38,14 +35,6 @@ public class VenditaPostgres implements Serializable {
     public void setRagioneSociale(String ragioneSociale) {
         this.ragioneSociale = ragioneSociale;
     }
-
-    //public Long getpIva() {
-      //  return pIva;
-    //}
-
-    //public void setpIva(Long pIva) {
-      //  this.pIva = pIva;
-    //}
 
     public String getIndirizzo() {
         return indirizzo;

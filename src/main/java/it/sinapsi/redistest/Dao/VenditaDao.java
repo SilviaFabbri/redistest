@@ -22,7 +22,6 @@ public class VenditaDao {
         Vendita vendita = new Vendita();
         vendita.setId(uuid);
         vendita.setRagioneSociale(venditaDto.getRagioneSociale());
-       // vendita.setpIva(vendita.getpIva());
         vendita.setIndirizzo(venditaDto.getIndirizzo());
         vendita.setVenditaData(venditaDto.getVenditaData());
         vendita.setVenditaScadenza(venditaDto.getVenditaScadenza());
@@ -30,7 +29,6 @@ public class VenditaDao {
         VenditaPostgres venditaP = new VenditaPostgres();
         venditaP.setId(uuid);
         venditaP.setRagioneSociale(venditaDto.getRagioneSociale());
-        //venditaP.setpIva(vendita.getpIva());
         venditaP.setIndirizzo(venditaDto.getIndirizzo());
         venditaP.setVenditaData(venditaDto.getVenditaData());
         venditaP.setVenditaScadenza(venditaDto.getVenditaScadenza());

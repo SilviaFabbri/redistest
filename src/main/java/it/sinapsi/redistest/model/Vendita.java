@@ -14,8 +14,6 @@ public class Vendita implements Serializable {
 
     private String ragioneSociale;
 
-    //private Long pIva;
-
     private String indirizzo;
 
     private LocalDate venditaData = LocalDate.now();
@@ -37,14 +35,6 @@ public class Vendita implements Serializable {
     public void setRagioneSociale(String ragioneSociale) {
         this.ragioneSociale = ragioneSociale;
     }
-
-    //public Long getpIva() {
-      //  return pIva;
-    //}
-
-    //public void setpIva(Long pIva) {
-      //  this.pIva = pIva;
-    //}
 
     public String getIndirizzo() {
         return indirizzo;
