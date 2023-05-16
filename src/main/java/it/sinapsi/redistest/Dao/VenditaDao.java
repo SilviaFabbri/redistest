@@ -6,7 +6,6 @@ import it.sinapsi.redistest.dto.VenditaDto;
 import it.sinapsi.redistest.model.Vendita;
 import it.sinapsi.redistest.model.VenditaPostgres;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
