@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity(name = "vendita")
@@ -16,9 +17,9 @@ public class VenditaPostgres implements Serializable {
     @Column(nullable = false)
     private String indirizzo;
     @Column(nullable = false)
-    private LocalDate venditaData = LocalDate.now();
+    private LocalDateTime venditaData = LocalDateTime.now();
     @Column(nullable = false)
-    private LocalDate venditaScadenza = LocalDate.now().plusMonths(3);
+    private LocalDateTime venditaScadenza = LocalDateTime.now().plusMonths(3);
 
     public UUID getId() {
         return Id;
@@ -44,19 +45,19 @@ public class VenditaPostgres implements Serializable {
         this.indirizzo = indirizzo;
     }
 
-    public LocalDate getVenditaData() {
+    public LocalDateTime getVenditaData() {
         return venditaData;
     }
 
-    public void setVenditaData(LocalDate venditaData) {
+    public void setVenditaData(LocalDateTime venditaData) {
         this.venditaData = venditaData;
     }
 
-    public LocalDate getVenditaScadenza() {
+    public LocalDateTime getVenditaScadenza() {
         return venditaScadenza;
     }
 
-    public void setVenditaScadenza(LocalDate venditaScadenza) {
+    public void setVenditaScadenza(LocalDateTime venditaScadenza) {
         this.venditaScadenza = venditaScadenza;
     }
 
