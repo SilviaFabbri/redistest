@@ -12,6 +12,15 @@ public class VenditaDto implements Serializable {
     private LocalDateTime venditaData = LocalDateTime.now();
 
     private LocalDateTime venditaScadenza = LocalDateTime.now().plusMonths(3);
+    private boolean pagate;
+
+    public boolean isPagate() {
+        return pagate;
+    }
+
+    public void setPagate(boolean pagate) {
+        this.pagate = pagate;
+    }
 
     public String getRagioneSociale() {
         return ragioneSociale;

@@ -20,6 +20,8 @@ public class VenditaManager {
     private VenditaRepository venditaRepository;
     @Autowired
     private VenditaPostgresRepository venditaPostgresRepository;
+    @Autowired
+    private Pagamento pagamento;
 
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
@@ -34,9 +36,12 @@ public class VenditaManager {
     //queste lavorano su postgres
     @GetMapping("/postgres")
     public Iterable<VenditaPostgres> findAllVenditaPostgres(){
-    return venditaPostgresRepository.findAll();
-  }
-
+        return venditaPostgresRepository.findAll();
+    }
+    @GetMapping("/postgres/pagato")
+    public List<VenditaPostgres>findAllPagato() throws NullPointerException {
+        return pagamento.filtroPagato(venditaPostgresRepository.findAll());
+    }
     @GetMapping("/{data}")
     public List<VenditaPostgres> findUByData(@PathVariable("data") LocalDate venditaData){
             return venditaPostgresRepository.findVenditaPostgresByVenditaData(venditaData);

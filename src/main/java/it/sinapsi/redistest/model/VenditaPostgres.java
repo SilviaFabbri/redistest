@@ -20,6 +20,16 @@ public class VenditaPostgres implements Serializable {
     private LocalDateTime venditaData = LocalDateTime.now();
     @Column(nullable = false)
     private LocalDateTime venditaScadenza = LocalDateTime.now().plusMonths(3);
+    @Column(nullable = false)
+    private boolean pagate;
+
+    public boolean isPagate() {
+        return pagate;
+    }
+
+    public void setPagate(boolean pagate) {
+        this.pagate = pagate;
+    }
 
     public UUID getId() {
         return Id;

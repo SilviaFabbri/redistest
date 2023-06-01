@@ -3,7 +3,6 @@ package it.sinapsi.redistest.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -20,6 +19,15 @@ public class Vendita implements Serializable {
     private LocalDateTime  venditaData = LocalDateTime.now();
 
     private LocalDateTime venditaScadenza = LocalDateTime.now().plusMonths(3);
+    private boolean pagate;
+
+    public boolean isPagate() {
+        return pagate;
+    }
+
+    public void setPagate(boolean pagate) {
+        this.pagate = pagate;
+    }
 
     public UUID getId() {
         return Id;
