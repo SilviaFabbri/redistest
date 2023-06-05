@@ -18,6 +18,7 @@ class PagamentoTest {
     @Test
     public void shouldReturnCorrectList() throws NullPointerException {
         List<VenditaPostgres> vendite = new ArrayList<>();
+        List<VenditaPostgres> vendita = new ArrayList<>();
         VenditaPostgres venditaP = new VenditaPostgres();
         venditaP.setId(UUID.randomUUID());
         venditaP.setRagioneSociale("Iona Corolla");
@@ -34,10 +35,11 @@ class PagamentoTest {
         venditaPo.setPagate(false);
         vendite.add(venditaP);
         vendite.add(venditaPo);
+        vendita.add(venditaP);
 
         List<VenditaPostgres> listaFiltrata = pagamento.filtroPagato(vendite);
 
-        assertThat(listaFiltrata).isEqualTo(listaFiltrata);
+        assertThat(listaFiltrata).isEqualTo(vendita);
     }
 
     @Test
