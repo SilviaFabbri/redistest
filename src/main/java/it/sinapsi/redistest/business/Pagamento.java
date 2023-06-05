@@ -1,7 +1,6 @@
 package it.sinapsi.redistest.business;
 
 import it.sinapsi.redistest.model.VenditaPostgres;
-import org.junit.runner.RunWith;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
